@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(./app/styles/reset.scss);
+@import url(./app/styles/variables.scss);
+@import url(./app/styles/utility.scss);
+
+html {
+  font-size: 62.5%;
+}
+

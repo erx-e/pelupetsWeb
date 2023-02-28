@@ -1,0 +1,52 @@
+
+:root {
+  --clr-primary-200: hsl(93, 53%, 97%);
+  --clr-primary-400: hsl(102, 63%, 59%);
+
+  --clr-accent-200: hsl(201, 63%, 63%);
+  --clr-accent-300: hsl(199, 100%, 75%);
+  --clr-accent-400: hsl(199, 100%, 30%);
+  --clr-accent-450: hsl(199, 100%, 40%);
+  --clr-accent-500: hsl(198, 100%, 22%);
+
+  --clr-accent2-300: hsl(46, 91%, 64%);
+  --clr-accent2-400: hsla(46, 91%, 57%);
+
+  --clr-neutral-100: hsl(120, 100%, 99%);
+  --clr-neutral-500: hsl(99, 11%, 26%);
+  --clr-neutral-900: hsl(100, 60%, 4%);
+  --clr-neutral-transparent-900: hsla(100, 60%, 4%, 0.8);
+
+  --ff-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-400: 1.2rem;
+  --fs-500: 1.4rem;
+  --fs-600: 1.6rem;
+  --fs-625: 2rem;
+  --fs-650: 2.5rem;
+  --fs-700: 3rem;
+  --fs-800: 3.5rem;
+
+  --fs-body: var(--fs-600);
+  --fs-button: var(--fs-600);
+  --fs-primary-heading: var(--fs-700);
+  --fs-secundary-heading: var(--fs-650);
+
+  --size-100: 0.5rem;
+  --size-200: 1rem;
+  --size-300: 1.5rem;
+  --size-400: 2rem;
+  --size-500: 3rem;
+  --size-600: 4rem;
+  --size-700: 5rem;
+  --size-800: 6rem;
+  --size-900: 9rem;
+}

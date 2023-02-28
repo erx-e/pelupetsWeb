@@ -1,0 +1,237 @@
+.primary-header {
+  padding-top: var(--size-400);
+
+  &__logo {
+    img {
+      width: 9rem;
+    }
+  }
+
+  &__menu {
+    > span {
+      display: block;
+      width: 2.3rem;
+      height: 0.2rem;
+      background-color: var(--clr-neutral-100);
+
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
+
+.primary-header[data-overlay] {
+  .primary-header__menu {
+    > span {
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(
+    rgb(0 0 0 / 0),
+    var(--clr-neutral-transparent-900)
+  );
+}
+
+.toggle-container {
+  .button {
+    margin-left: 2rem;
+  }
+  width: 20rem;
+}
+
+.emergency-container {
+  width: 23rem;
+}
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  // position: fixed;
+  // top: var(--size-400);
+  // right: var(--size-400);
+  z-index: 100;
+  background: transparent;
+  border: 0;
+}
+
+.nav-list {
+  font-weight: var(--fw-semi-bold);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-accent-400);
+}
+
+.primary-navigation[data-visible] {
+  visibility: visible;
+  // width: 30rem;
+}
+
+.instagram-icon {
+  width: var(--size-500);
+}
+
+@media screen and (max-width: 47.99em) {
+  .primary-navigation {
+    visibility: hidden;
+    position: fixed;
+    inset: 9rem var(--size-400) auto;
+    background-color: var(--clr-neutral-100);
+    border-radius: var(--size-100);
+  }
+
+  .nav-list {
+    display: grid;
+    gap: var(--size-400);
+    padding: var(--size-500);
+    text-align: center;
+
+    a {
+      color: var(--clr-primary-400);
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .primary-navigation {
+    display: block;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: clamp(var(--size-400), 2.5vw, var(--size-600));
+
+    a {
+      color: var(--clr-neutral-100);
+    }
+  }
+}
+
+@media screen and (min-width: 64em) {
+}
+
+@media screen and (min-width: 80em) {
+}
+
+/*Flex*/
+.flex {
+  display: flex;
+
+  &-d-c {
+    flex-direction: column;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-sa {
+    justify-content: space-around;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+//Animation
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out-overlay {
+  from {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+    width: 100%;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    width: 0%;
+  }
+}
+
+.fade-out-overlay {
+  animation: fade-out-overlay 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+.hide-for-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 48em) {
+  .hide-for-mobile {
+    display: block;
+  }
+
+  .flex {
+    &.hide-for-mobile {
+      display: flex;
+    }
+  }
+
+  .hide-for-desktop {
+    display: none;
+  }
+}

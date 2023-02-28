@@ -1,0 +1,72 @@
+<header
+  class="primary-header bg-primary-400 size-700"
+  [attr.data-overlay]="toggle ? true : null"
+>
+  <div
+    class="overlay"
+    [style.width.%]="toggle ? '100' : '0'"
+    [class.fade-in]="toggle"
+    [class.fade-out-overlay]="!toggle && toggleTouched"
+  ></div>
+  <div class="container">
+    <div class="flex flex-jc-sb flex-ai-c">
+      <a href="/" class="primary-header__logo">
+        <img src="../../../../assets/imgs/logo.png" alt="Pelupet's" />
+      </a>
+      <nav
+        class="primary-navigation"
+        id="primary-navigation"
+        [attr.data-visible]="toggle ? true : null"
+        [class.fade-in]="toggle"
+        [class.fade-out]="!toggle && toggleTouched"
+      >
+        <ul class="nav-list" role="list">
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Pet Fotos</a></li>
+          <!-- <li><a href="#">Nuevos clientes</a></li> -->
+          <li><a href="#">Contacto</a></li>
+          <!-- <li><a href="#">Emergencia</a></li> -->
+        </ul>
+      </nav>
+      <div class="emergency-container | flex flex-jc-sb flex-ai-c hide-for-mobile">
+        <a
+          class="text-neutral-100 fw-semi-bold hide-for-mobile"
+          href="tel:0992830757"
+          aria-label="El número de telefono es 0992830757"
+          >099-283-0757</a
+        >
+        <a href="#" class="hide-for-mobile">
+          <button class="button" data-type="alert">
+            Emergencia
+          </button>
+        </a>
+      </div>
+      <!-- <a class="instagram-icon | hide-for-mobile" href="https://www.instagram.com/pelupets_vet/"
+        ><img
+          src="../../../../assets/imgs/icono_instagramWhite.png"
+          alt="Instagram icono"
+      /></a> -->
+      <div class="toggle-container | flex flex-jc-sa hide-for-desktop">
+        <a href="#">
+          <button class="button" data-type="alert">
+            Emergencia
+          </button>
+        </a>
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          [attr.aria-expanded]="toggle"
+          (click)="toggleMenu()"
+        >
+          <span class="visually-hidden">Menu</span>
+          <div class="primary-header__menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,247 @@
+/* Utility classes */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/*Color*/
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+.text-primary-200 {
+  color: var(--clr-primary-200);
+}
+.text-accent-500 {
+  color: var(--clr-accent-500);
+}
+.text-accent-400 {
+  color: var(--clr-accent-400);
+}
+.text-accent-200 {
+  color: var(--clr-accent-200);
+}
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+.text-neutral-500 {
+  color: var(--clr-neutral-500);
+}
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+.bg-primary-200 {
+  background-color: var(--clr-primary-200);
+}
+.bg-accent-500 {
+  background-color: var(--clr-accent-500);
+}
+.bg-accent-400 {
+  background-color: var(--clr-accent-400);
+}
+.bg-accent-200 {
+  background-color: var(--clr-accent-200);
+}
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+.bg-neutral-500 {
+  background-color: var(--clr-neutral-500);
+}
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+/*Font weight*/
+.fw-black {
+  font-weight: var(--fw-black);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+/*Font size*/
+.fs-body {
+  font-size: var(--fs-600);
+}
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  line-height: 1.1;
+}
+.fs-secundary-heading {
+  font-size: var(--fs-secundary-heading);
+  line-height: 1.1;
+}
+.fs-button {
+  font-size: var(--fs-600);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-625 {
+  font-size: var(--fs-625);
+}
+.fs-650 {
+  font-size: var(--fs-650);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+.padding-block-500 {
+  padding-block: var(--size-500);
+}
+.padding-block-400 {
+  padding-block: var(--size-400);
+}
+
+@media screen and (min-width: 48rem) {
+  .padding-block-700 {
+    padding-block: var(--size-900);
+  }
+}
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-neutral-100);
+}
+
+.max-width-tighter {
+  max-width: 20ch;
+}
+
+.max-width-tight {
+  max-width: 30ch;
+}
+
+.max-width-loose {
+  max-width: 45ch;
+}
+
+@media (max-width: 47.99em) {
+  .txt-al-c-only-md {
+    text-align: center;
+  }
+
+  .txt-al-c-only-md p {
+    margin-inline: auto;
+  }
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1.6rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+:where(.flow > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="loosest"] > :not(:first-child) {
+  --flow-spacer: 7rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="looser"] > :not(:first-child) {
+  --flow-spacer: 5rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="loose"] > :not(:first-child) {
+  --flow-spacer: 3rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="tight"] > :not(:first-child) {
+  --flow-spacer: 0.5rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.even-columns {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.txt-al-c {
+  text-align: center;
+}
+/*
+@media screen and (min-width: 50em) {
+  .even-column{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  .even-columns{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+*/
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  border-radius: 2px;
+  padding: 0.5em 1em;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-button);
+  line-height: 1;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+}
+
+.button[data-type="alert"] {
+  background-color: var(--clr-accent2-400);
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: #008bcc;
+}
+
+.button[data-type="alert"]:hover,
+.button[data-type="alert"]:focus-visible {
+  background-color: var(--clr-accent2-300);
+}
+
+@media screen and (min-width: 64em) {
+}
+
+@media screen and (min-width: 80em) {
+}
