@@ -1,5 +1,5 @@
 .primary-header {
-  padding-top: var(--size-400);
+  padding-block: var(--size-400);
 
   &__logo {
     img {
@@ -39,9 +39,34 @@
   }
 }
 
+.close-symbol {
+  > span {
+    display: block;
+    width: 2.3rem;
+    height: 0.2rem;
+    background-color: var(--clr-neutral-100);
+
+    transition: all 300ms ease-in-out;
+    transform-origin: 3px 1px;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+    &:first-child {
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
 .overlay {
   position: fixed;
-  inset: 0;
+  inset: 10rem 0 0;
   background-image: linear-gradient(
     rgb(0 0 0 / 0),
     var(--clr-neutral-transparent-900)
@@ -57,6 +82,9 @@
 
 .emergency-container {
   width: 23rem;
+  a:hover {
+    color: var(--clr-accent-350);
+  }
 }
 
 .mobile-nav-toggle {
@@ -73,9 +101,39 @@
   font-weight: var(--fw-semi-bold);
 }
 
-.nav-list a:hover,
-.nav-list a:focus {
-  color: var(--clr-accent-400);
+.nav-list > li:hover > a,
+.nav-list > li:hover > a,
+.nav-list > li:hover > a {
+  color: var(--clr-accent-350);
+}
+
+.services-li:hover {
+  .toggle-list__services {
+    display: block;
+  }
+}
+
+.subToggle-container {
+  display: none;
+  position: absolute;
+  inset: 0;
+  height: fit-content;
+  padding-block: 20px;
+  padding-inline: 16px;
+  z-index: 2;
+}
+
+.toggle-list {
+  padding-inline-start: 20px;
+  padding-block-start: 1rem;
+  li {
+    list-style: none;
+  }
+  a {
+    display: block;
+    padding-block: 0.5rem;
+    color: var(--clr-neutral-100);
+  }
 }
 
 .primary-navigation[data-visible] {
@@ -89,41 +147,99 @@
 
 @media screen and (max-width: 47.99em) {
   .primary-navigation {
+    // visibility: hidden;
+    // position: fixed;
+    // inset: 9rem var(--size-400) auto;
+    // background-color: var(--clr-neutral-100);
+    // border-radius: var(--size-100);
+
+    width: 100%;
     visibility: hidden;
     position: fixed;
-    inset: 9rem var(--size-400) auto;
+    inset: 9.92rem 0 auto;
     background-color: var(--clr-neutral-100);
-    border-radius: var(--size-100);
   }
 
   .nav-list {
-    display: grid;
-    gap: var(--size-400);
-    padding: var(--size-500);
-    text-align: center;
+    // display: grid;
+    // gap: var(--size-400);
+    // padding: var(--size-500);
+    // text-align: center;
 
-    a {
-      color: var(--clr-primary-400);
+    padding: var(--size-500);
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    margin-block-end: 30px;
+
+    > li {
+      width: 100%;
+      border-bottom: 1px solid var(--clr-accent-250);
+      > a {
+        display: block;
+        padding: 20px 50px 10px 0;
+        font-size: 28px;
+        line-height: 30px;
+        text-transform: capitalize;
+        color: var(--clr-primary-400);
+
+        background: url(../../../../assets/imgs/arrow-right-blue.png) no-repeat
+          97% 65%;
+      }
     }
   }
 }
 
 @media screen and (min-width: 48em) {
+
   .primary-navigation {
     display: block;
   }
 
   .nav-list {
     display: flex;
-    gap: clamp(var(--size-400), 2.5vw, var(--size-600));
+    gap: clamp(0.75rem, 1.15vw, var(--size-600));
 
-    a {
+    > li > a {
       color: var(--clr-neutral-100);
+    }
+  }
+
+  .services-li {
+    position: relative;
+  }
+
+  .services-li:hover {
+    .subToggle-container {
+      display: block;
+    }
+  }
+  .subToggle-container {
+    position: absolute;
+    inset: 24px 0 0;
+    height: fit-content;
+    width: fit-content;
+    padding: 0;
+  }
+  .toggle-list {
+    list-style: none;
+    width: 210px;
+    background-color: var(--clr-accent-400);
+    padding: 0;
+    a {
+      padding-block: 0.6rem;
+      padding-inline-start: 1.5rem;
+      &:hover {
+
+        background-color: var(--clr-accent-350);
+      }
     }
   }
 }
 
 @media screen and (min-width: 64em) {
+  .nav-list {
+    gap: clamp(var(--size-400), 2.5vw, var(--size-600));
+  }
 }
 
 @media screen and (min-width: 80em) {
@@ -217,17 +333,17 @@
 }
 
 .hide-for-mobile {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (min-width: 48em) {
   .hide-for-mobile {
-    display: block;
+    display: block !important;
   }
 
   .flex {
     &.hide-for-mobile {
-      display: flex;
+      display: flex !important;
     }
   }
 

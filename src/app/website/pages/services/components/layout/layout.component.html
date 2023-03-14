@@ -1,0 +1,16 @@
+<main>
+  <div class="top_heading | container " *ngIf="serviceTitle != null">
+    <h1 class="fs-secundary-heading fw-bold text-primary-400">{{serviceTitle}}</h1>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="bg-accent-400 ">
+    <div class="cta | container">
+      <p class="fs-800 fw-semi-bold">
+        Haz una cita
+      </p>
+      <a href="https://wa.link/n2x0hq" target="_blank" class="button" data-type="green">
+        Contáctanos
+      </a>
+    </div>
+  </div>
+</main>

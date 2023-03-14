@@ -1,12 +1,14 @@
 
 :root {
-  --clr-primary-200: hsl(93, 53%, 97%);
+  --clr-primary-200: #f7fbf3;
+  --clr-primary-300: #E0F0D1;
   --clr-primary-400: hsl(102, 63%, 59%);
 
   --clr-accent-200: hsl(201, 63%, 63%);
-  --clr-accent-300: hsl(199, 100%, 75%);
+  --clr-accent-250: hsla(199, 100%, 75%, 0.75);
+  --clr-accent-300: #80d7ff;
+  --clr-accent-350: hsl(199, 100%, 40%);
   --clr-accent-400: hsl(199, 100%, 30%);
-  --clr-accent-450: hsl(199, 100%, 40%);
   --clr-accent-500: hsl(198, 100%, 22%);
 
   --clr-accent2-300: hsl(46, 91%, 64%);
@@ -44,7 +46,9 @@
   --size-200: 1rem;
   --size-300: 1.5rem;
   --size-400: 2rem;
+  --size-450: 2.5rem;
   --size-500: 3rem;
+  --size-550: 3.5rem;
   --size-600: 4rem;
   --size-700: 5rem;
   --size-800: 6rem;

@@ -1,16 +1,89 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.footer-nav {
+  text-align: center;
+  a {
+    color: var(--clr-neutral-100);
+
+    &:hover {
+      color: var(--clr-primary-400);
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .footer-nav {
+    columns: 2;
+  }
+}
+
 .pelupets-logo-container {
   width: 10.5rem;
+  display: block;
+}
+
+.social-links {
+  margin-top: var(--size-300);
 }
 
 .instagramWhite_logo {
+  display: block;
   width: 2.5rem;
+  margin-inline: auto;
 }
+
+.location-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--clr-neutral-100);
+  &__img {
+    width: 20px;
+
+  }
+
+  p {
+    width: 20rem;
+    &:hover {
+      color: var(--clr-primary-400);
+    }
+  }
+}
+
+.phone-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  a {
+    display: block;
+    &:hover {
+      color: var(--clr-primary-400);
+    }
+  }
+
+  &__img {
+    width: 20px;
+  }
+}
+
+
 
 /*Flex*/
 .flex {
   display: flex;
 
-  &-d-c{
+  &-d-c {
     flex-direction: column;
   }
 
@@ -41,7 +114,7 @@
   }
 
   .flex {
-    &.hide-for-mobile{
+    &.hide-for-mobile {
       display: flex;
     }
   }

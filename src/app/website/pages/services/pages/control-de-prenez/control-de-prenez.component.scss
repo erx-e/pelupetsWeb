@@ -1,0 +1,49 @@
+.service-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-block-end: var(--size-450);
+}
+
+.img-container {
+  height: 21.5rem;
+  background-image: url(../../../../../../assets/imgs/control-de-preñez-imagen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media screen and (min-width: 48rem) {
+  .img-container {
+    height: 32.5rem;
+    background-position-y: -100px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .service-container {
+    flex-direction: row;
+    margin-block-start: var(--size-100);
+    margin-block-end: var(--size-500);
+    gap: 5rem;
+    :nth-child(1) {
+      order: 1;
+    }
+  }
+
+  .img-container {
+    width: 58rem;
+    height: 35.5rem;
+    background-position-y: 0;
+  }
+
+  .text-container {
+    width: 48rem;
+    h2 {
+      font-size: 38px;
+    }
+    p {
+      font-size: var(--fs-600);
+    }
+  }
+}

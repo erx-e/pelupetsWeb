@@ -7,6 +7,7 @@
     [style.width.%]="toggle ? '100' : '0'"
     [class.fade-in]="toggle"
     [class.fade-out-overlay]="!toggle && toggleTouched"
+    (click)="toggleMenu()"
   ></div>
   <div class="container">
     <div class="flex flex-jc-sb flex-ai-c">
@@ -20,26 +21,215 @@
         [class.fade-in]="toggle"
         [class.fade-out]="!toggle && toggleTouched"
       >
-        <ul class="nav-list" role="list">
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Pet Fotos</a></li>
-          <!-- <li><a href="#">Nuevos clientes</a></li> -->
-          <li><a href="#">Contacto</a></li>
+        <ul class="nav-list hide-for-desktop" role="list">
+          <li>
+            <a (click)="toggleMenu()" [routerLink]="['/sobre-nosotros']"
+              >Sobre nosotros</a
+            >
+          </li>
+          <li class="services-li hide-for-desktop">
+            <a (click)="toggleSubMenu($event)"
+              >Servicios</a
+            >
+            <div class="subToggle-container | bg-accent-400">
+              <div class="flex flex-jc-sb">
+                <h2 [routerLink]="['/servicios']" class="fs-650">Servicios</h2>
+                <button
+                  class="mobile-nav-toggle"
+                  aria-expanded="true"
+                  (click)="toggleSubMenu($event, true)"
+                >
+                  <div class="close-symbol">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </button>
+              </div>
+              <ul class="toggle-list toggle-list__services">
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['servicios/consultas']"
+                  >
+                    Consultas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/peluqueria']"
+                  >
+                    Peluquería
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/hosteleria']"
+                  >
+                    Hostelería
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/diagnosticos-por-imagen']"
+                  >
+                    Diagnosticos por imagen
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/cirugia']"
+                  >
+                    Cirugía
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/vacunas']"
+                  >
+                    Vacunas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/medicinas']"
+                  >
+                    Medicinas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/desparacitaciones']"
+                  >
+                    Desparacitaciones
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/cuidado-de-mascotas']"
+                  >
+                    Cuidado de mascotas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    (click)="toggleMenu()"
+                    (click)="toggleSubMenu(undefined, true)"
+                    [routerLink]="['/servicios/control-de-preñez']"
+                  >
+                    Control de preñez
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="services-li">
+            <a (click)="toggleMenu()" [routerLink]="['/pet-fotos']"
+              >Pet Fotos</a
+            >
+          </li>
+          <li class="services-li">
+            <a (click)="toggleMenu()" [routerLink]="['/productos']"
+              >Productos</a
+            >
+          </li>
+          <li class="services-li">
+            <a (click)="toggleMenu()" [routerLink]="['/contacto']">Contacto</a>
+          </li>
+        </ul>
+        <ul class="nav-list hide-for-mobile flex" role="list">
+          <li>
+            <a [routerLink]="['/sobre-nosotros']">Sobre nosotros</a>
+          </li>
+          <li class="services-li">
+            <a [routerLink]="['/servicios']">Servicios</a>
+            <div class="subToggle-container | bg-accent-400">
+              <ul class="toggle-list toggle-list__services">
+                <li>
+                  <a [routerLink]="['servicios/consultas']"> Consultas </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/peluqueria']"> Peluquería </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/hosteleria']"> Hostelería </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/diagnosticos-por-imagen']">
+                    Diagnosticos por imagen
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/cirugia']"> Cirugía </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/vacunas']"> Vacunas </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/medicinas']"> Medicinas </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/desparacitaciones']">
+                    Desparacitaciones
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/cuidado-de-mascotas']">
+                    Cuidado de mascotas
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/servicios/control-de-preñez']">
+                    Control de preñez
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="services-li">
+            <a  [routerLink]="['/pet-fotos']"
+              >Pet Fotos</a
+            >
+          </li>
+          <li class="services-li">
+            <a [routerLink]="['/productos']"
+              >Productos</a
+            >
+          </li>
+          <li class="services-li">
+            <a [routerLink]="['/contacto']">Contacto</a>
+          </li>
           <!-- <li><a href="#">Emergencia</a></li> -->
         </ul>
       </nav>
-      <div class="emergency-container | flex flex-jc-sb flex-ai-c hide-for-mobile">
+      <div
+        class="emergency-container | flex flex-jc-sb flex-ai-c hide-for-mobile"
+      >
         <a
           class="text-neutral-100 fw-semi-bold hide-for-mobile"
           href="tel:0992830757"
           aria-label="El número de telefono es 0992830757"
           >099-283-0757</a
         >
-        <a href="#" class="hide-for-mobile">
-          <button class="button" data-type="alert">
-            Emergencia
-          </button>
+        <a routerLink="emergencia" class="hide-for-mobile">
+          <button class="button" data-type="alert">Emergencia</button>
         </a>
       </div>
       <!-- <a class="instagram-icon | hide-for-mobile" href="https://www.instagram.com/pelupets_vet/"
@@ -48,10 +238,8 @@
           alt="Instagram icono"
       /></a> -->
       <div class="toggle-container | flex flex-jc-sa hide-for-desktop">
-        <a href="#">
-          <button class="button" data-type="alert">
-            Emergencia
-          </button>
+        <a routerLink="emergencia">
+          <button class="button" data-type="alert">Emergencia</button>
         </a>
         <button
           class="mobile-nav-toggle"

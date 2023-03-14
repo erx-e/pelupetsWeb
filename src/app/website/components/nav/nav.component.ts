@@ -17,5 +17,25 @@ export class NavComponent {
     if(!this.toggle){
       document.body.style.removeProperty("overflow")
     }
+
+  }
+
+
+  toggleSubMenu(event?: Event, open?: boolean) {
+    if(event){
+      let subElementToggle = event.currentTarget as HTMLElement;
+      if(!open) {
+        let toggleList = subElementToggle.nextElementSibling as HTMLElement
+        toggleList.style.display = "block";
+      }
+      else {
+        let toggleList = document.querySelector(".subToggle-container") as HTMLElement;
+        toggleList.style.display = "none";
+      }
+    }
+    else {
+      let toggleList = document.querySelector(".subToggle-container") as HTMLElement;
+      toggleList.style.display = "none";
+    }
   }
 }

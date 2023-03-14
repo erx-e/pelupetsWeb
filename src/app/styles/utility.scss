@@ -110,19 +110,38 @@
 }
 .fs-700 {
   font-size: var(--fs-700);
+  line-height: 1.1;
 }
 .fs-800 {
   font-size: var(--fs-800);
+  line-height: 1.1;
 }
 
-.padding-block-700 {
-  padding-block: var(--size-700);
+.line-height-400 {
+  line-height: 16px;
+}
+
+.padding-block-200 {
+  padding-block: var(--size-200);
+}
+.padding-block-400 {
+  padding-block: var(--size-400);
+}
+.padding-block-450 {
+  padding-block: var(--size-450);
 }
 .padding-block-500 {
   padding-block: var(--size-500);
 }
-.padding-block-400 {
-  padding-block: var(--size-400);
+.padding-block-550 {
+  padding-block: var(--size-550);
+}
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+
+.padding-block-end-400 {
+  padding-block-end: var(--size-400);
 }
 
 @media screen and (min-width: 48rem) {
@@ -147,6 +166,10 @@ body {
 
 .max-width-loose {
   max-width: 45ch;
+}
+
+.max-width-looser {
+  max-width: 55ch;
 }
 
 @media (max-width: 47.99em) {
@@ -187,6 +210,21 @@ body {
 }
 
 .flow[data-spacing="tight"] > :not(:first-child) {
+  --flow-spacer: 2.5rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="tighter"] > :not(:first-child) {
+  --flow-spacer: 1.5rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="normal"] > :not(:first-child) {
+  --flow-spacer: 1rem;
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.flow[data-spacing="tightest"] > :not(:first-child) {
   --flow-spacer: 0.5rem;
   margin-top: var(--flow-spacer, 1rem);
 }
@@ -230,9 +268,13 @@ body {
   background-color: var(--clr-accent2-400);
 }
 
+.button[data-type="green"] {
+  background-color: var(--clr-primary-400);
+}
+
 .button:hover,
 .button:focus-visible {
-  background-color: #008bcc;
+  background-color: var(--clr-accent-350);
 }
 
 .button[data-type="alert"]:hover,
