@@ -6,7 +6,6 @@
 .map {
   width: 100%;
   height: 235px;
-  z-index: -100;
 }
 .contact-container {
   display: flex;
@@ -15,6 +14,7 @@
 .calls {
   a {
     display: block;
+    width: fit-content;
   }
 }
 

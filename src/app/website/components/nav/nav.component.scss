@@ -66,6 +66,7 @@
 
 .overlay {
   position: fixed;
+  z-index: 1;
   inset: 10rem 0 0;
   background-image: linear-gradient(
     rgb(0 0 0 / 0),
@@ -158,6 +159,7 @@
     position: fixed;
     inset: 9.92rem 0 auto;
     background-color: var(--clr-neutral-100);
+    z-index: 2;
   }
 
   .nav-list {
